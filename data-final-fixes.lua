@@ -1,3 +1,4 @@
+local pre_data = require('__pypostprocessing__/pre_mark')()
 local DEBUG = require('config').DEBUG
 
 if DEBUG then
@@ -36,3 +37,4 @@ for r,recipe in pairs(data.raw.recipe) do
 end
 
 require('prototypes/map-gen-presets')
+require('__pypostprocessing__/post_mark')(pre_data)

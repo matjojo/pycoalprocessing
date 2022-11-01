@@ -1,3 +1,4 @@
+local pre_data = require('__pypostprocessing__/pre_mark')()
 require("__stdlib__/stdlib/data/data").Util.create_data_globals()
 local FUN = require("prototypes/functions/functions")
 
@@ -274,3 +275,4 @@ if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].v
         ::continue::
     end
 end
+require('__pypostprocessing__/post_mark')(pre_data)
