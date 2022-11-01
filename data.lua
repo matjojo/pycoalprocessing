@@ -1,3 +1,4 @@
+local pre_data = require('__pypostprocessing__/pre_mark')()
 require('__stdlib__/stdlib/data/data').Util.create_data_globals()
 
 -- (( Groups ))--
@@ -315,3 +316,5 @@ data.raw.fluid['refsyngas'].fuel_value = '0.5MJ'
 data.raw.fluid['methanol'].fuel_value = '1MJ'
 data.raw.fluid['tar'].fuel_value = '0.2MJ'
 --data.raw.fluid['combustion-mixture1'].fuel_value = '0.1MJ'
+
+require('__pypostprocessing__/post_mark')(pre_data)
